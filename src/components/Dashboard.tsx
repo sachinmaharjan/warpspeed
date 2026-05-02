@@ -38,12 +38,39 @@ interface Mission {
   StatusRocket: string;
   Price: number | null;
   StatusMission: string;
+  rocket?: string;
 }
 
 const COLORS = ['#6366f1', '#10b981', '#f59e0b', '#f43f5e', '#8b5cf6'];
 
 export default function Dashboard() {
-  const [activeTab, setActiveTab] = useState<'dashboard' | 'analytics' | 'telemetry'>('dashboard');
+  const [activeTab, setActiveTab] = useState<'dashboard' | 'analytics' | 'telemetry' | 'upcoming'>('dashboard');
+  const [upcomingMissions, setUpcomingMissions] = useState<any[]>([]);
+  const [loadingUpcoming, setLoadingUpcoming] = useState(false);
+  const [upcomingError, setUpcomingError] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (activeTab === 'upcoming' && upcomingMissions.length === 0) {
+      setLoadingUpcoming(true);
+      fetch('https://lldev.thespacedevs.com/2.2.0/launch/upcoming/')
+        .then(res => {
+          if (!res.ok) throw new Error('Failed to fetch upcoming missions');
+          return res.json();
+        })
+        .then(data => {
+          if (data && data.results) {
+            setUpcomingMissions(data.results);
+          } else {
+            throw new Error('Invalid response format');
+          }
+        })
+        .catch(err => {
+          setUpcomingError(err.message);
+          console.error('[Observability] [ERROR] Failed to load upcoming', err);
+        })
+        .finally(() => setLoadingUpcoming(false));
+    }
+  }, [activeTab, upcomingMissions.length]);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [missions, setMissions] = useState<Mission[]>([]);
   const [loading, setLoading] = useState(true);
@@ -303,6 +330,10 @@ export default function Dashboard() {
           <button onClick={() => { setActiveTab('telemetry'); setIsMobileMenuOpen(false); }} className={`w-full flex items-center gap-3 px-6 py-3 ${activeTab === 'telemetry' ? 'bg-indigo-600 text-white' : 'text-slate-400 hover:text-white hover:bg-slate-800 transition-colors'}`}>
             <div className={`w-4 h-4 rounded transition-colors ${activeTab === 'telemetry' ? 'bg-white/20' : 'border border-slate-600'}`}></div>
             <span className="text-sm font-medium">Telemetry Stream</span>
+          </button>
+          <button onClick={() => { setActiveTab('upcoming'); setIsMobileMenuOpen(false); }} className={`w-full flex items-center gap-3 px-6 py-3 ${activeTab === 'upcoming' ? 'bg-indigo-600 text-white' : 'text-slate-400 hover:text-white hover:bg-slate-800 transition-colors'}`}>
+            <div className={`w-4 h-4 rounded transition-colors ${activeTab === 'upcoming' ? 'bg-white/20' : 'border border-slate-600'}`}></div>
+            <span className="text-sm font-medium">Upcoming Missions</span>
           </button>
           
           <div className="px-6 py-8 mt-4">
@@ -729,6 +760,65 @@ export default function Dashboard() {
                   <div className="animate-pulse text-emerald-500 mt-4">_</div>
                 </div>
               </div>
+            </main>
+          )}
+
+          {activeTab === 'upcoming' && (
+            <main className="p-4 sm:p-8 space-y-8 animate-in fade-in duration-500">
+               <div className="flex items-center justify-between">
+                 <h2 className="text-xl font-bold text-slate-800">Upcoming Missions</h2>
+               </div>
+               
+               {loadingUpcoming ? (
+                 <div className="py-20 flex flex-col items-center justify-center text-slate-500 space-y-4">
+                   <div className="w-8 h-8 border-4 border-indigo-500 border-t-transparent rounded-full animate-spin"></div>
+                   <p className="text-sm font-medium animate-pulse">Initializing long-range scanners...</p>
+                 </div>
+               ) : upcomingError ? (
+                 <div className="p-6 bg-rose-50 border border-rose-200 rounded-xl text-rose-700 max-w-2xl">
+                   <p className="font-bold mb-1">Communication Error</p>
+                   <p className="text-sm">{upcomingError}</p>
+                 </div>
+               ) : (
+                 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                   {upcomingMissions.map((um: any) => (
+                     <div key={um.id} className="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition-shadow">
+                       {um.image && (
+                         <div className="h-48 w-full bg-slate-200 relative overflow-hidden">
+                           <img src={um.image} alt={um.name} className="w-full h-full object-cover" />
+                           <div className="absolute top-2 right-2 px-2 py-1 bg-slate-900/80 backdrop-blur-sm text-white text-[10px] uppercase font-bold tracking-wider rounded">
+                             T-{Math.max(0, Math.floor((new Date(um.net).getTime() - Date.now()) / (1000 * 60 * 60 * 24)))} Days
+                           </div>
+                         </div>
+                       )}
+                       <div className="p-5 flex-1 flex flex-col">
+                         <div className="mb-3">
+                           <span className="text-[10px] font-bold text-indigo-600 uppercase tracking-widest bg-indigo-50 px-2 py-1 rounded">
+                             {um.launch_service_provider?.name || 'Unknown Provider'}
+                           </span>
+                         </div>
+                         <h3 className="font-bold text-slate-900 text-lg leading-tight mb-2">{um.name}</h3>
+                         <p className="text-sm text-slate-500 mb-4 flex-1 line-clamp-3">
+                           {um.mission?.description || 'No mission description provided.'}
+                         </p>
+                         
+                         <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
+                           <div>
+                             <p className="text-[10px] text-slate-400 font-bold uppercase mb-0.5">NET Launch Date</p>
+                             <p className="text-xs font-semibold text-slate-700">{new Date(um.net).toLocaleString()}</p>
+                           </div>
+                           <div className="text-right flex flex-col items-end">
+                             <p className="text-[10px] text-slate-400 font-bold uppercase mb-0.5">Status</p>
+                             <p className={`text-xs font-bold px-2 py-0.5 rounded ${um.status?.abbrev === 'Go' || um.status?.abbrev === 'TBC' ? 'bg-emerald-50 text-emerald-600' : 'bg-amber-50 text-amber-600'}`}>
+                               {um.status?.name || 'Unknown'}
+                             </p>
+                           </div>
+                         </div>
+                       </div>
+                     </div>
+                   ))}
+                 </div>
+               )}
             </main>
           )}
           

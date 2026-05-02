@@ -31,6 +31,7 @@ The user interface is divided into three main operational tabs, along with a com
 - **Global Dashboard**: Provides a geographic high-level overview, utilizing an interactive world map to visualize launch locations globally.
 - **Payload Analytics**: Features deep visual representations of historical mission data using Recharts. Includes insights such as mission success rates over time, top agencies by total launches, and active vs. retired rocket status.
 - **Telemetry Stream**: An immersive, terminal-style monospace log UI representing a structured feed of space mission events and historical metrics.
+- **Upcoming Missions**: Real-time integration with the Launch Library API to display upcoming global rocket launches, ETAs, and provider details.
 - **Mission Ledger**: An interactive data table that displays mission logs. Core functionality includes:
   - **Related Articles**: Clicking each mission will popuo window for related articles
   - **Text Search**: Filter missions dynamically by name, detail, or rocket profile.
