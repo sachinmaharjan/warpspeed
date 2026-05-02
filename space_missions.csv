@@ -1,0 +1,105 @@
+Company,Location,Date,Time,Rocket,Mission,RocketStatus,Price,MissionStatus
+RVSN USSR,"Site 1/5, Baikonur Cosmodrome, Kazakhstan",1957-10-04,19:28:00,Sputnik 8K71PS,Sputnik-1,Retired,,Success
+RVSN USSR,"Site 1/5, Baikonur Cosmodrome, Kazakhstan",1957-11-03,02:30:00,Sputnik 8K71PS,Sputnik-2,Retired,,Success
+US Navy,"LC-18A, Cape Canaveral AFS, Florida, USA",1957-12-06,16:44:00,Vanguard,Vanguard TV3,Retired,,Failure
+AMBA,"LC-26A, Cape Canaveral AFS, Florida, USA",1958-02-01,03:48:00,Juno I,Explorer 1,Retired,,Success
+US Navy,"LC-18A, Cape Canaveral AFS, Florida, USA",1958-02-05,07:33:00,Vanguard,Vanguard TV3BU,Retired,,Failure
+AMBA,"LC-26A, Cape Canaveral AFS, Florida, USA",1958-03-05,18:27:00,Juno I,Explorer 2,Retired,,Failure
+US Navy,"LC-18A, Cape Canaveral AFS, Florida, USA",1958-03-17,12:15:00,Vanguard,Vanguard 1,Retired,,Success
+AMBA,"LC-5, Cape Canaveral AFS, Florida, USA",1958-03-26,17:38:00,Juno I,Explorer 3,Retired,,Success
+RVSN USSR,"Site 1/5, Baikonur Cosmodrome, Kazakhstan",1958-04-27,09:01:00,Sputnik 8A91,Sputnik-3 #1,Retired,,Failure
+US Navy,"LC-18A, Cape Canaveral AFS, Florida, USA",1958-04-28,02:53:00,Vanguard,Vanguard TV5,Retired,,Failure
+RVSN USSR,"Site 1/5, Baikonur Cosmodrome, Kazakhstan",1958-05-15,07:12:00,Sputnik 8A91,Sputnik-3 #2,Retired,,Success
+US Navy,"LC-18A, Cape Canaveral AFS, Florida, USA",1958-05-28,03:46:00,Vanguard,Vanguard SLV-1,Retired,,Failure
+US Navy,"LC-18A, Cape Canaveral AFS, Florida, USA",1958-06-26,05:00:00,Vanguard,Vanguard SLV-2,Retired,,Failure
+US Navy,"Douglas F4D Skyray, Naval Air Station Point Mugu, California, USA",1958-07-25,,NOTS-EV-1 Pilot II,Pilot-1 (D1),Retired,,Failure
+AMBA,"LC-5, Cape Canaveral AFS, Florida, USA",1958-07-26,15:00:00,Juno I,Explorer 4,Retired,,Success
+US Navy,"Douglas F4D Skyray, Naval Air Station Point Mugu, California, USA",1958-08-12,,NOTS-EV-1 Pilot II,Pilot-2 (D2),Retired,,Failure
+US Air Force,"SLC-17A, Cape Canaveral AFS, Florida, USA",1958-08-17,12:18:00,Thor-DM 18 Able I,Pioneer 0,Retired,,Failure
+US Navy,"Douglas F4D Skyray, Naval Air Station Point Mugu, California, USA",1958-08-22,,NOTS-EV-1 Pilot II,Pilot-3 (D3),Retired,,Failure
+AMBA,"LC-5, Cape Canaveral AFS, Florida, USA",1958-08-24,06:17:00,Juno I,Explorer 5,Retired,,Failure
+US Navy,"Douglas F4D Skyray, Naval Air Station Point Mugu, California, USA",1958-08-25,,NOTS-EV-1 Pilot II,Pilot-4 (R1),Retired,,Failure
+US Navy,"Douglas F4D Skyray, Naval Air Station Point Mugu, California, USA",1958-08-26,,NOTS-EV-1 Pilot II,Pilot-5 (R2),Retired,,Failure
+US Navy,"Douglas F4D Skyray, Naval Air Station Point Mugu, California, USA",1958-08-29,,NOTS-EV-1 Pilot II,Pilot-6 (R3,Retired,,Failure
+RVSN USSR,"Site 1/5, Baikonur Cosmodrome, Kazakhstan",1958-09-23,07:40:00,Vostok,E-1 nвЂ В­1 (Luna-1),Retired,,Failure
+US Navy,"LC-18A, Cape Canaveral AFS, Florida, USA",1958-09-26,15:38:00,Vanguard,Vanguard SLV-3,Retired,,Failure
+NASA,"SLC-17A, Cape Canaveral AFS, Florida, USA",1958-10-11,08:42:00,Thor-DM 18 Able I,Pioneer 1,Retired,,Partial Failure
+RVSN USSR,"Site 1/5, Baikonur Cosmodrome, Kazakhstan",1958-10-11,21:41:00,Vostok,E-1 nвЂ В­2 (Luna-1),Retired,,Failure
+AMBA,"LC-5, Cape Canaveral AFS, Florida, USA",1958-10-23,03:21:00,Juno I,Beacon 1,Retired,,Failure
+NASA,"SLC-17A, Cape Canaveral AFS, Florida, USA",1958-11-08,07:30:00,Thor-DM 18 Able I,Pioneer 2,Retired,,Failure
+RVSN USSR,"Site 1/5, Baikonur Cosmodrome, Kazakhstan",1958-12-04,18:18:00,Vostok,E-1 nвЂ В­3 (Luna-1),Retired,,Failure
+AMBA,"LC-5, Cape Canaveral AFS, Florida, USA",1958-12-06,05:44:00,Juno II,Pioneer 3,Retired,,Partial Failure
+US Air Force,"LC-11, Cape Canaveral AFS, Florida, USA",1958-12-18,23:02:00,SM-65B Atlas,SCORE,Retired,,Success
+RVSN USSR,"Site 1/5, Baikonur Cosmodrome, Kazakhstan",1959-01-02,16:41:00,Vostok,Luna-1,Retired,,Partial Failure
+US Navy,"LC-18A, Cape Canaveral AFS, Florida, USA",1959-02-17,15:55:00,Vanguard,Vanguard 2,Retired,,Success
+US Air Force,"SLC-1W (75-3-4), Vandenberg AFB, California, USA",1959-02-28,21:49:00,Thor-DM18 Agena-A,Discoverer 1,Retired,,Failure
+US Air Force,"SLC-1W (75-3-4), Vandenberg AFB, California, USA",1959-04-13,21:18:00,Thor-DM18 Agena-A,Discoverer 2,Retired,,Success
+US Navy,"LC-18A, Cape Canaveral AFS, Florida, USA",1959-04-14,02:49:00,Vanguard,Vanguard SLV-5,Retired,,Failure
+US Air Force,"SLC-1W (75-3-4), Vandenberg AFB, California, USA",1959-06-03,20:09:00,Thor-DM18 Agena-A,Discoverer 3,Retired,,Failure
+RVSN USSR,"Site 1/5, Baikonur Cosmodrome, Kazakhstan",1959-06-18,08:08:00,Vostok,E-1A nвЂ В­1 (Luna-2),Retired,,Failure
+US Navy,"LC-18A, Cape Canaveral AFS, Florida, USA",1959-06-22,20:16:00,Vanguard,Vanguard SLV-6,Retired,,Failure
+US Air Force,"SLC-1E (75-3-5), Vandenberg AFB, California, USA",1959-06-25,22:47:00,Thor-DM18 Agena-A,Discoverer 4,Retired,,Failure
+US Air Force,"SLC-17A, Cape Canaveral AFS, Florida, USA",1959-08-07,14:24:00,Thor DM-18 Able-III,Explorer 6,Retired,,Success
+US Air Force,"SLC-1W (75-3-4), Vandenberg AFB, California, USA",1959-08-13,19:00:00,Thor-DM18 Agena-A,Discoverer 5,Retired,,Success
+US Air Force,"SLC-1E (75-3-5), Vandenberg AFB, California, USA",1959-08-19,19:24:00,Thor-DM18 Agena-A,Discoverer 6,Retired,,Success
+NASA,"LC-14, Cape Canaveral AFS, Florida, USA",1959-09-09,08:19:00,Atlas-D Mercury,Big Joe 1,Retired,,Partial Failure
+RVSN USSR,"Site 1/5, Baikonur Cosmodrome, Kazakhstan",1959-09-12,06:39:00,Vostok,Luna-2,Retired,,Success
+US Air Force,"SLC-17A, Cape Canaveral AFS, Florida, USA",1959-09-17,14:34:00,Thor DM-18 Able-II,Transit 1A,Retired,,Failure
+US Navy,"LC-18A, Cape Canaveral AFS, Florida, USA",1959-09-18,05:20:00,Vanguard,Vanguard 3,Retired,,Partial Failure
+RVSN USSR,"Site 1/5, Baikonur Cosmodrome, Kazakhstan",1959-10-04,00:43:00,Vostok,Luna-3,Retired,,Success
+US Air Force,"SLC-1W (75-3-4), Vandenberg AFB, California, USA",1959-11-07,20:28:00,Thor-DM18 Agena-A,Discoverer 7,Retired,,Success
+US Air Force,"SLC-1E (75-3-5), Vandenberg AFB, California, USA",1959-11-20,19:25:00,Thor-DM18 Agena-A,Discoverer 8,Retired,,Failure
+General Dynamics,"LC-14, Cape Canaveral AFS, Florida, USA",1959-11-26,07:26:00,Atlas-D Able,Pioneer P-3,Retired,,Failure
+CASC,"LC-9, Taiyuan Satellite Launch Center, China",2022-04-15,18:16:00,Long March 4C,Daqi-1 (AEMS),Active,64.68,Success
+SpaceX,"SLC-4E, Vandenberg SFB, California, USA",2022-04-17,13:13:00,Falcon 9 Block 5,NROL-85,Active,67,Success
+SpaceX,"SLC-40, Cape Canaveral SFS, Florida, USA",2022-04-21,17:51:00,Falcon 9 Block 5,Starlink Group 4-14,Active,67,Success
+SpaceX,"LC-39A, Kennedy Space Center, Florida, USA",2022-04-27,07:52:00,Falcon 9 Block 5,SpaceX Crew-4,Active,67,Success
+CASC,"Site 9401 (SLS-2), Jiuquan Satellite Launch Center, China",2022-04-29,04:11:00,Long March 2C,SuperView Neo 1-01 & 02,Active,30.8,Success
+VKS RF,"Site 35/1, Plesetsk Cosmodrome, Russia",2022-04-29,19:55:00,Angara 1.2,Cosmos 2555,Active,,Success
+SpaceX,"SLC-40, Cape Canaveral SFS, Florida, USA",2022-04-29,21:27:00,Falcon 9 Block 5,Starlink Group 4-16,Active,67,Success
+CASC,"Tai Rui Barge, Yellow Sea",2022-04-30,03:30:00,Long March 11H,Jilin-1 Gaofen 03D-04 to 07 & 04A,Active,5.3,Success
+Rocket Lab,"Rocket Lab LC-1A, M?hia Peninsula, New Zealand",2022-05-02,22:49:00,Electron/Curie,There and Back Again,Active,7.5,Success
+CASC,"LC-9, Taiyuan Satellite Launch Center, China",2022-05-05,02:38:00,Long March 2D,Jilin-1 Wideband-01C & High Resolution 03D-27 to 33,Active,29.75,Success
+SpaceX,"LC-39A, Kennedy Space Center, Florida, USA",2022-05-06,09:42:00,Falcon 9 Block 5,Starlink Group 4-17,Active,67,Success
+CASC,"LC-201, Wenchang Satellite Launch Center, China",2022-05-09,17:56:00,Long March 7,Tianzhou 4,Active,,Success
+i-Space,"Site 95, Jiuquan Satellite Launch Center, China",2022-05-13,07:09:00,Hyperbola-1,Jilin-1 Mofang-01A(R),Active,,Failure
+SpaceX,"SLC-4E, Vandenberg SFB, California, USA",2022-05-13,22:07:00,Falcon 9 Block 5,Starlink Group 4-13,Active,67,Success
+SpaceX,"SLC-40, Cape Canaveral SFS, Florida, USA",2022-05-14,20:40:00,Falcon 9 Block 5,Starlink Group 4-15,Active,67,Success
+SpaceX,"LC-39A, Kennedy Space Center, Florida, USA",2022-05-18,10:59:00,Falcon 9 Block 5,Starlink Group 4-18,Active,67,Success
+VKS RF,"Site 43/4, Plesetsk Cosmodrome, Russia",2022-05-19,08:03:00,Soyuz 2.1a,Cosmos 2556,Active,17.42,Success
+ULA,"SLC-41, Cape Canaveral SFS, Florida, USA",2022-05-19,22:54:00,Atlas V N22,Starliner OFT-2,Active,,Success
+CASC,"Site 9401 (SLS-2), Jiuquan Satellite Launch Center, China",2022-05-20,10:30:00,Long March 2C/YZ-1S,RSW-04 - 06,Active,30.8,Success
+SpaceX,"SLC-40, Cape Canaveral SFS, Florida, USA",2022-05-25,18:35:00,Falcon 9 Block 5,Transporter 5,Active,67,Success
+CASC,"LC-3, Xichang Satellite Launch Center, China",2022-06-02,04:00:00,Long March 2C,Geely Constellation Group 01,Active,30.8,Success
+Roscosmos,"Site 31/6, Baikonur Cosmodrome, Kazakhstan",2022-06-03,09:32:00,Soyuz 2.1a,Progress MS-20,Active,17.42,Success
+Blue Origin,"Launch Site One, West Texas, Texas, USA",2022-06-04,13:25:00,New Shepard,NS-21,Active,,Success
+CASC,"Site 901 (SLS-1), Jiuquan Satellite Launch Center, China",2022-06-05,02:44:00,Long March 2F/G,Shenzhou 14,Active,,Success
+SpaceX,"SLC-40, Cape Canaveral SFS, Florida, USA",2022-06-08,21:04:00,Falcon 9 Block 5,Nilesat-301,Active,67,Success
+SpaceX,"LC-39A, Kennedy Space Center, Florida, USA",2022-06-17,16:09:00,Falcon 9 Block 5,Starlink Group 4-19,Active,67,Success
+SpaceX,"SLC-4E, Vandenberg SFB, California, USA",2022-06-18,14:19:00,Falcon 9 Block 5,SARah 1,Active,67,Success
+SpaceX,"SLC-40, Cape Canaveral SFS, Florida, USA",2022-06-19,04:27:00,Falcon 9 Block 5,Globalstar FM15 & USA 328 to 331,Active,67,Success
+KARI,"LC-2, Naro Space Center, South Korea",2022-06-21,07:00:00,KSLV-2,Test Flight 2,Active,,Success
+CASIC,"Site 95, Jiuquan Satellite Launch Center, China",2022-06-22,02:08:00,Kuaizhou 1A,Tianxing-1,Active,5.8,Success
+Arianespace,"ELA-3, Guiana Space Centre, French Guiana, France",2022-06-22,21:50:00,Ariane 5 ECA,Measat-3d & GSAT-24,Active,200,Success
+CASC,"LC-3, Xichang Satellite Launch Center, China",2022-06-23,02:22:00,Long March 2D,Yaogan 35 Group 02,Active,29.75,Success
+CASC,"Site 9401 (SLS-2), Jiuquan Satellite Launch Center, China",2022-06-27,15:46:00,Long March 4C,Gaofen-12 03,Active,64.68,Success
+Rocket Lab,"Rocket Lab LC-1B, M?hia Peninsula, New Zealand",2022-06-28,09:55:00,Electron/Photon,CAPSTONE,Active,,Success
+SpaceX,"SLC-40, Cape Canaveral SFS, Florida, USA",2022-06-29,21:04:00,Falcon 9 Block 5,SES-22,Active,67,Success
+ISRO,"Second Launch Pad, Satish Dhawan Space Centre, India",2022-06-30,12:32:00,PSLV-CA,"DS-EO, NeuSAR, SCOOB-I & POEM",Active,21,Success
+ULA,"SLC-41, Cape Canaveral SFS, Florida, USA",2022-07-01,23:15:00,Atlas V 541,USSF-12 (WFOV),Active,145,Success
+Virgin Orbit,"Cosmic Girl, Mojave Air and Space Port, California, USA",2022-07-02,06:53:00,LauncherOne,STP-S28A,Active,12,Success
+VKS RF,"Site 43/4, Plesetsk Cosmodrome, Russia",2022-07-07,09:18:00,Soyuz 2.1b/Fregat-M,Cosmos 2557,Active,25,Success
+SpaceX,"SLC-40, Cape Canaveral SFS, Florida, USA",2022-07-07,13:11:00,Falcon 9 Block 5,Starlink Group 4-21,Active,67,Success
+SpaceX,"SLC-4E, Vandenberg SFB, California, USA",2022-07-11,01:39:00,Falcon 9 Block 5,Starlink Group 3-1,Active,67,Success
+CASC,"LC-2, Xichang Satellite Launch Center, China",2022-07-12,16:30:00,Long March 3B/E,Tianlian-2-03,Active,29.15,Success
+Astra,"SLC-46, Cape Canaveral SFS, Florida, USA",2022-07-12,17:43:00,Rocket 3,TROPICS Flight 1,Active,2.5,Failure
+Rocket Lab,"Rocket Lab LC-1A, M?hia Peninsula, New Zealand",2022-07-13,06:30:00,Electron/Curie,Wise One Looks Ahead (NROL-162),Active,7.5,Success
+ESA,"ELV-1, Guiana Space Centre, French Guiana, France",2022-07-13,13:13:00,Vega C,LARES 2 & Cubesats,Active,,Success
+SpaceX,"LC-39A, Kennedy Space Center, Florida, USA",2022-07-15,00:44:00,Falcon 9 Block 5,CRS SpX-25,Active,67,Success
+CASC,"LC-9, Taiyuan Satellite Launch Center, China",2022-07-15,22:57:00,Long March 2C,SuperView Neo 2-01 & 02,Active,30.8,Success
+SpaceX,"SLC-40, Cape Canaveral SFS, Florida, USA",2022-07-17,14:20:00,Falcon 9 Block 5,Starlink Group 4-22,Active,67,Success
+SpaceX,"SLC-4E, Vandenberg SFB, California, USA",2022-07-22,17:39:00,Falcon 9 Block 5,Starlink Group 3-2,Active,67,Success
+CASC,"LC-101, Wenchang Satellite Launch Center, China",2022-07-24,06:22:00,Long March 5B,Wentian,Active,,Success
+SpaceX,"LC-39A, Kennedy Space Center, Florida, USA",2022-07-24,13:38:00,Falcon 9 Block 5,Starlink Group 4-25,Active,67,Success
+CAS Space,"Jiuquan Satellite Launch Center, China",2022-07-27,04:12:00,Zhongke-1A,Demo Flight,Active,,Success
+CASC,"LC-3, Xichang Satellite Launch Center, China",2022-07-29,13:28:00,Long March 2D,Yaogan 35 Group 03,Active,29.75,Success
