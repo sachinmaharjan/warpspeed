@@ -25,9 +25,9 @@ The dashboard must satisfy both:
 1. Human review (UI/UX/dashboard quality)
 2. Programmatic grading (exact function outputs/signatures)
 
-==================================================
+================================================
 AGENT ARCHITECTURE
-==================================================
+================================================
 
 You must operate as the following coordinated agents:
 
@@ -288,9 +288,9 @@ Public GitHub repo includes:
 
 README must look senior-level and production-ready
 
-==================================================
+================================================
 EXECUTION RULES
-==================================================
+================================================
 
 ALL AGENTS MUST:
 - think like senior engineers
@@ -311,9 +311,9 @@ PRIORITY ORDER:
 6. production-quality code
 7. recruiter impression
 
-==================================================
+================================================
 FINAL OUTPUT REQUIRED
-==================================================
+================================================
 
 Deliver:
 1. Production-ready WarpSpeed TypeScript app
