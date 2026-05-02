@@ -8,8 +8,11 @@ This repository contains a production-ready Space Missions Dashboard tailored fo
 Live URL:
 https://ais-pre-wfb3itxrqelqozilagnryj-263505095148.us-west1.run.app
 
-Multi-Agent Prompt:
+## Multi-Agent Prompt:
 - see PROMPT.md
+
+## Data Visualization Explanation:
+- see EXPLANATION.md
 
 ## 1. System Architecture
 
