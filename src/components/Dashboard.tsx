@@ -53,6 +53,33 @@ export default function Dashboard() {
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
   
+  const [selectedMission, setSelectedMission] = useState<Mission | null>(null);
+  const [missionArticles, setMissionArticles] = useState<{ title: string, snippet: string, url: string }[]>([]);
+  const [isArticlesLoading, setIsArticlesLoading] = useState(false);
+
+  const fetchMissionArticles = async (mission: Mission) => {
+    setSelectedMission(mission);
+    setIsArticlesLoading(true);
+    setMissionArticles([]);
+    try {
+      // Create a search query using the company and mission detail
+      const query = encodeURIComponent(`${mission.Company} ${mission.Detail} space launch`);
+      const res = await fetch(`https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${query}&utf8=&format=json&origin=*`);
+      const data = await res.json();
+      if (data.query && data.query.search) {
+        setMissionArticles(data.query.search.slice(0, 3).map((item: any) => ({
+          title: item.title,
+          snippet: item.snippet.replace(/(<([^>]+)>)/gi, ""), // Strip HTML tags returned by Wikipedia
+          url: `https://en.wikipedia.org/wiki/${encodeURIComponent(item.title)}`
+        })));
+      }
+    } catch (err) {
+      console.error(JSON.stringify({ level: 'error', event: 'article_fetch_failure', error: String(err) }));
+    } finally {
+      setIsArticlesLoading(false);
+    }
+  };
+
   // Sorting state
   const [sortConfig, setSortConfig] = useState<{ key: keyof Mission, direction: 'asc' | 'desc' } | null>(null);
 
@@ -554,8 +581,12 @@ export default function Dashboard() {
                     </thead>
                     <tbody className="divide-y divide-slate-100 text-sm">
                       {filteredMissions.slice(0, 100).map((m, i) => (
-                        <tr key={i} className="hover:bg-slate-50 transition-colors">
-                          <td className="p-4 font-semibold text-slate-900">{m.Company}</td>
+                        <tr 
+                          key={i} 
+                          className="hover:bg-slate-50 transition-colors cursor-pointer group"
+                          onClick={() => fetchMissionArticles(m)}
+                        >
+                          <td className="p-4 font-semibold text-slate-900 group-hover:text-indigo-600 transition-colors">{m.Company}</td>
                           <td className="p-4 text-slate-500 font-mono text-[11px]">{new Date(m.Date).toLocaleDateString()}</td>
                           <td className="p-4 text-slate-700 truncate max-w-[200px]" title={m.Detail}>{m.Detail}</td>
                           <td className="p-4 text-slate-500 truncate max-w-[150px] text-xs" title={m.Location}>{m.Location}</td>
@@ -720,6 +751,94 @@ export default function Dashboard() {
             </div>
           </footer>
         </div>
+
+        {/* Mission Details Modal */}
+        {selectedMission && (
+          <div className="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+            <div className="bg-white rounded-xl shadow-2xl max-w-2xl w-full max-h-[85vh] flex flex-col overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+              <div className="p-6 border-b border-slate-100 flex items-start justify-between bg-slate-50">
+                <div>
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="px-2 py-0.5 bg-slate-200 text-slate-700 text-[10px] rounded font-mono font-bold uppercase tracking-wider">{new Date(selectedMission.Date).toLocaleDateString()}</span>
+                    <span className={`px-2 py-0.5 rounded text-[10px] font-mono font-bold uppercase tracking-wider border ${
+                        selectedMission.StatusMission.toLowerCase().includes('success') 
+                          ? 'bg-emerald-50 text-emerald-600 border-emerald-200' 
+                          : 'bg-rose-50 text-rose-600 border-rose-200'
+                      }`}>
+                      {selectedMission.StatusMission}
+                    </span>
+                  </div>
+                  <h2 className="text-xl font-bold text-slate-900 tracking-tight">{selectedMission.Company}</h2>
+                  <p className="text-sm text-slate-600 font-medium mt-1">{selectedMission.Detail}</p>
+                </div>
+                <button 
+                  onClick={() => setSelectedMission(null)}
+                  className="p-2 text-slate-400 hover:text-slate-600 hover:bg-slate-200 rounded-lg transition-colors"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+              
+              <div className="p-6 overflow-y-auto">
+                <div className="grid grid-cols-2 gap-4 mb-8">
+                  <div className="p-4 bg-slate-50 rounded-lg border border-slate-100">
+                    <p className="text-xs text-slate-500 font-bold uppercase tracking-wider mb-1">Rocket</p>
+                    <p className="text-sm font-semibold text-slate-900">{selectedMission.rocket || 'Unknown'}</p>
+                  </div>
+                  <div className="p-4 bg-slate-50 rounded-lg border border-slate-100">
+                    <p className="text-xs text-slate-500 font-bold uppercase tracking-wider mb-1">Location</p>
+                    <p className="text-sm font-semibold text-slate-900 truncate" title={selectedMission.Location}>{selectedMission.Location}</p>
+                  </div>
+                </div>
+
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <h3 className="font-bold text-slate-800 tracking-tight flex items-center gap-2">
+                      <Search className="w-4 h-4 text-indigo-500" />
+                      Related Articles & News
+                    </h3>
+                    <a 
+                      href={`https://www.google.com/search?q=${encodeURIComponent(`${selectedMission.Company} ${selectedMission.Detail} space launch news`)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs font-semibold text-indigo-600 hover:text-indigo-700 bg-indigo-50 hover:bg-indigo-100 px-3 py-1.5 rounded transition-colors flex items-center gap-1"
+                    >
+                      Search Google
+                    </a>
+                  </div>
+
+                  {isArticlesLoading ? (
+                    <div className="py-8 flex flex-col items-center justify-center text-slate-400 space-y-3">
+                      <div className="w-6 h-6 border-2 border-indigo-500 border-t-transparent rounded-full animate-spin"></div>
+                      <p className="text-sm">Fetching reports...</p>
+                    </div>
+                  ) : missionArticles.length > 0 ? (
+                    <div className="space-y-3">
+                      {missionArticles.map((article, idx) => (
+                        <a 
+                          key={idx} 
+                          href={article.url} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="block p-4 border border-slate-200 hover:border-indigo-300 hover:shadow-md rounded-xl transition-all group bg-white"
+                        >
+                          <h4 className="font-bold text-indigo-600 group-hover:text-indigo-700 text-sm mb-1">{article.title}</h4>
+                          <p className="text-sm text-slate-600 line-clamp-2 leading-relaxed" dangerouslySetInnerHTML={{ __html: article.snippet }}></p>
+                        </a>
+                      ))}
+                    </div>
+                  ) : (
+                     <div className="py-8 text-center bg-slate-50 rounded-xl border border-slate-100 border-dashed">
+                      <p className="text-sm text-slate-500">No specific Wikipedia articles found.</p>
+                      <p className="text-xs text-slate-400 mt-1">Try the Google Search button above for news.</p>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
       </div>
     </div>
   );

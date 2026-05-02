@@ -24,7 +24,23 @@ The application is segregated into domain-specific workflows:
 
 ---
 
-## 2. Supabase Setup Guide & CSV Import Guide
+## 2. App Pages & Functionality
+
+The user interface is divided into three main operational tabs, along with a comprehensive data ledger:
+
+- **Global Dashboard**: Provides a geographic high-level overview, utilizing an interactive world map to visualize launch locations globally.
+- **Payload Analytics**: Features deep visual representations of historical mission data using Recharts. Includes insights such as mission success rates over time, top agencies by total launches, and active vs. retired rocket status.
+- **Telemetry Stream**: An immersive, terminal-style monospace log UI representing a structured feed of space mission events and historical metrics.
+- **Mission Ledger**: An interactive data table that displays mission logs. Core functionality includes:
+  - **Related Articles**: Clicking each mission will popuo window for related articles
+  - **Text Search**: Filter missions dynamically by name, detail, or rocket profile.
+  - **Status Filtering**: Isolate missions by outcomes (e.g., Success, Failure, Prelaunch Failure).
+  - **Date Range Filtering**: Dynamically bound the dataset to specific operational windows (Start & End Date selectors).
+  - **Sortable Columns**: Order the ledger by Date, Company, Location, or Price.
+
+---
+
+## 3. Supabase Setup Guide & CSV Import Guide
 
 Our dataset varies notoriously across unformatted Kaggle datasets. 
 We provide a pure TypeScript ETL pipeline directly to Postgres.
@@ -49,7 +65,7 @@ The pipeline automatically partitions records into 500-batch arrays, emitting `[
 
 ---
 
-## 3. Visualization Rationale 
+## 4. Visualization Rationale 
 
 - **Mission Success Over Time (Line Chart)**: Represents sequential temporal shifts. A dual-line mapping success vs failure efficiently tells the entire payload reliability progression narrative over decades.
 - **Mission Status Distribution (Donut Pie)**: Optimal for visualizing proportions across an immutable and deterministic set of finite states (Success, Failure, Partial Failure).
@@ -57,7 +73,7 @@ The pipeline automatically partitions records into 500-batch arrays, emitting `[
 
 ---
 
-## 4. Observability & Kibana Elastic Guide
+## 5. Observability & Kibana Elastic Guide
 
 The backbone of WarpSpeed's operations relies entirely on granular Event logging. For Kibana ingestion:
 - **Format**: All operational events use `JSON.stringify()` structured object emissions.
@@ -73,7 +89,7 @@ The backbone of WarpSpeed's operations relies entirely on granular Event logging
 
 ---
 
-## 5. Automated Testing Instructions
+## 6. Automated Testing Instructions
 
 The core backend exports explicit functions mandated by programmatic graders.
 To evaluate the runtime resilience:
@@ -98,7 +114,7 @@ curl -X POST http://localhost:3000/api/rpc/getSuccessRate \
 
 ---
 
-## 6. Known Limitations
+## 7. Known Limitations
 
 - **Truncated Dashboards**: The React table only displays a 100-record slice. Attempting to render all historical Space Missions DOM nodes simultaneously without virtualization crashes standard browsers. 
 - **Legacy Timestamps**: Some mission entries possess arbitrary timezone deviations that rely on Node.js UTC implicit resolution. Cross-verifying these dates on extreme boundary days might skew slightly if evaluated in a non-UTC executing architecture.
