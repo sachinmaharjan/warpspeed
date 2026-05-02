@@ -4,6 +4,8 @@
 
 This repository contains a production-ready Space Missions Dashboard tailored for analytical operations and programmatic observability. Built with TypeScript on the "WarpSpeed App" design philosophy, it ingests legacy CSV mission files into a normalized database structure (Supabase) while emitting robust, Kibana-compatible telemetry for system, query, and API-level logs.
 
+Live URL: 
+https://ais-pre-wfb3itxrqelqozilagnryj-263505095148.us-west1.run.app
 ---
 
 ## 1. System Architecture
